@@ -1,0 +1,38 @@
+{
+  "name": "party-parrot-led",
+  "version": "1.0.0",
+  "description": "a party parrot matrix",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^15.1.0",
+    "redux": "^3.5.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "html-webpack-plugin": "^2.21.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dslounge/party-parrot-led.git"
+  },
+  "keywords": [
+    "party",
+    "parrot",
+    "led"
+  ],
+  "author": "Rafael Mendiola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dslounge/party-parrot-led/issues"
+  },
+  "homepage": "https://github.com/dslounge/party-parrot-led#readme"
+}
