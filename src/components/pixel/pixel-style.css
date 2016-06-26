@@ -1,5 +1,14 @@
 .pixel {
   width: 20px;
   height: 20px;
+  display: inline-block;
+  margin: 2px;
+}
+
+.on {
+  background-color: green;
+}
+
+.off {
   background-color: black;
 }
