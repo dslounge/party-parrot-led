@@ -9,7 +9,11 @@ const TestApp = () => {
   );
 };
 
+const appDiv = document.createElement('div');
+appDiv.id = 'parrot-app';
+document.body.appendChild(appDiv);
+
 ReactDOM.render(
   React.createElement(TestApp, null),
-  document.body
+  appDiv
 );
