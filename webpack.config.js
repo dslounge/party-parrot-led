@@ -10,14 +10,17 @@ module.exports = {
     filename: 'index.bundle.js',
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel', // 'babel-loader' is also a legal name to reference
-      query: {
-        presets: ['es2015', 'react'],
+    loaders: [
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel', // 'babel-loader' is also a legal name to reference
+        query: {
+          presets: ['es2015', 'react'],
+        },
       },
-    }],
+    ],
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'Party Parrot LED',
