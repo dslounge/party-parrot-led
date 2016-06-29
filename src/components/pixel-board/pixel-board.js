@@ -1,5 +1,7 @@
 import React from 'react';
 import Pixel from '../pixel/pixel';
+import { connect } from 'react-redux';
+
 
 const PixelBoard = (props) => {
   const matrix = props.matrix.map((row, x) => {
@@ -17,4 +19,10 @@ PixelBoard.propTypes = {
   matrix: React.PropTypes.array,
 };
 
-export default PixelBoard;
+const mapStateToProps = (state) => {
+  return {
+    matrix: state.board.board,
+  };
+};
+
+export default connect(mapStateToProps)(PixelBoard);
