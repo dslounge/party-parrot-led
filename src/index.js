@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'lodash';
 import Pixel from './components/pixel/pixel';
+import PixelBoard from './components/pixel-board/pixel-board';
 import font from './font-data';
 
 const TestApp = () => {
@@ -26,6 +27,8 @@ const TestApp = () => {
     <div>
       <h1>Pixel test!</h1>
       {rows}
+      <h1>Matrix test!</h1>
+      <PixelBoard rows={10} columns={20} />
     </div>
   );
 };

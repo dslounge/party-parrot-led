@@ -1,24 +1,30 @@
 import React from 'react';
-import _ from 'lodash';
-import Pixel from './components/pixel/pixel';
+// import _ from 'lodash';
+import Pixel from '../pixel/pixel';
 
 const PixelBoard = (props) => {
-
-  const rows = matrix.map((row) => {
-    const pixels = row.map((val) => {
+  const matrix = Array(props.rows).fill().map((a, x) => {
+    const cols = Array(props.columns).fill().map((b, y) => {
       return (
-        <Pixel on={val === '1'} />
+        <Pixel key={`${x}_${y}`} />
       );
     });
-
+    return (
+      <div key={`row_${x}`}className="matrix-row">
+        {cols}
+      </div>
+    );
+  });
   return (
+    <div>
+      {matrix}
+    </div>
   );
 };
 
-Pixel.propTypes = {
-  width: React.PropTypes.number,
-  height: React.PropTypes.number,
-  on: React.PropTypes.bool,
+PixelBoard.propTypes = {
+  rows: React.PropTypes.number,
+  columns: React.PropTypes.number,
 };
 
 export default PixelBoard;
