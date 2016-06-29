@@ -1,16 +1,15 @@
 import React from 'react';
-// import _ from 'lodash';
 import Pixel from '../pixel/pixel';
 
 const PixelBoard = (props) => {
-  const matrix = Array(props.rows).fill().map((a, x) => {
-    const cols = Array(props.columns).fill().map((b, y) => {
+  const matrix = props.matrix.map((row, x) => {
+    const cols = row.map((val, y) => {
       return (
-        <Pixel key={`${x}_${y}`} />
+        <Pixel key={`${x}_${y}`} on={val === '1'} />
       );
     });
     return (
-      <div key={`row_${x}`}className="matrix-row">
+      <div key={`row_${x}`} className="matrix-row">
         {cols}
       </div>
     );
@@ -23,8 +22,7 @@ const PixelBoard = (props) => {
 };
 
 PixelBoard.propTypes = {
-  rows: React.PropTypes.number,
-  columns: React.PropTypes.number,
+  matrix: React.PropTypes.array,
 };
 
 export default PixelBoard;
