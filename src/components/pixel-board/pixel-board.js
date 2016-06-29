@@ -4,20 +4,12 @@ import Pixel from '../pixel/pixel';
 const PixelBoard = (props) => {
   const matrix = props.matrix.map((row, x) => {
     const cols = row.map((val, y) => {
-      return (
-        <Pixel key={`${x}_${y}`} on={val === '1'} />
-      );
+      return (<Pixel key={`${x}_${y}`} on={val === '1'} />);
     });
-    return (
-      <div key={`row_${x}`} className="matrix-row">
-        {cols}
-      </div>
-    );
+    return (<div key={`row_${x}`} className="matrix-row">{cols}</div>);
   });
   return (
-    <div>
-      {matrix}
-    </div>
+    <div>{matrix}</div>
   );
 };
 

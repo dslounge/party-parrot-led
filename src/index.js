@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import _ from 'lodash';
 import PixelBoard from './components/pixel-board/pixel-board';
 import font from './font-data';
+import ledApp from './app/reducers';
 
-const TestApp = () => {
+const store = createStore(ledApp);
+
+const App = () => {
   const character = font['#'];
   const matrix = character.map((row) => _.padStart(row.toString(2), 5, '0').split(''));
   return (
@@ -20,6 +25,8 @@ appDiv.id = 'parrot-app';
 document.body.appendChild(appDiv);
 
 ReactDOM.render(
-  React.createElement(TestApp, null),
+  <Provider store={store}>
+    <App />
+  </Provider>,
   appDiv
 );
