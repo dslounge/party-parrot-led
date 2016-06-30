@@ -1,13 +1,21 @@
-import { SET_MATRIX } from '../actions/';
+import { SET_MATRIX, SET_SIZE } from '../actions/';
+
+const createMatrix = (rows, columns) => {
+  return Array(rows).fill().map(() => {
+    return Array(columns).fill(0);
+  });
+};
 
 const initialState = {
-  matrix: Array(10).fill().map(() => {
-    return Array(20).fill(0);
-  }),
+  matrix: createMatrix(10, 20),
 };
 
 const board = (state = initialState, action) => {
   switch (action.type) {
+    case SET_SIZE:
+      return { ...state,
+         matrix: createMatrix(action.value.rows, action.value.columns),
+       };
     case SET_MATRIX:
       return { ...state, matrix: action.value };
     default:
