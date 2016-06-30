@@ -9,10 +9,7 @@ const initialState = {
 const board = (state = initialState, action) => {
   switch (action.type) {
     case SET_BOARD:
-      // TODO: This isn't a valid way of setting the state. Use Object.assign
-      return {
-        board: action.value,
-      };
+      return { ...state, board: action.value };
     default:
       return state;
   }
