@@ -1,8 +1,8 @@
-export const SET_BOARD = 'SET_BOARD';
+export const SET_MATRIX = 'SET_MATRIX';
 
-export const setBoard = (board) => {
+export const setMatrix = (matrix) => {
   return {
-    type: SET_BOARD,
-    value: board,
+    type: SET_MATRIX,
+    value: matrix,
   };
 };

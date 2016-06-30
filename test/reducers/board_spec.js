@@ -1,7 +1,7 @@
 import board from '../../src/app/reducers/board';
 
 import {
-  setBoard,
+  setMatrix,
 } from '../../src/app/actions';
 
 describe('board reducer', () => {
@@ -9,7 +9,7 @@ describe('board reducer', () => {
 
   beforeEach(() => {
     initialState = {
-      board: Array(10).fill().map(() => {
+      matrix: Array(10).fill().map(() => {
         return Array(20).fill(0);
       }),
     };
@@ -21,9 +21,9 @@ describe('board reducer', () => {
 
   it('sets board correctly', () => {
     const testVal = [];
-    const action = setBoard(testVal);
+    const action = setMatrix(testVal);
     const expectedState = {
-      board: testVal,
+      matrix: testVal,
     };
     expect(board(initialState, action)).to.deep.equal(expectedState);
   });

@@ -6,14 +6,14 @@ import _ from 'lodash';
 import PixelBoard from './components/pixel-board/pixel-board';
 import font from './font-data';
 import ledApp from './app/reducers';
-import { setBoard } from './app/actions';
+import { setMatrix } from './app/actions';
 
 const store = createStore(ledApp);
 
 const character = font['#'];
 const matrix = character.map((row) => _.padStart(row.toString(2), 5, '0').split(''));
 
-store.dispatch(setBoard(matrix));
+store.dispatch(setMatrix(matrix));
 
 const App = () => {
   return (

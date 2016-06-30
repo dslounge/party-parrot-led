@@ -21,7 +21,7 @@ PixelBoard.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    matrix: state.board.board,
+    matrix: state.board.matrix,
   };
 };
 
